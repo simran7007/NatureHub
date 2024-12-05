@@ -1,0 +1,22 @@
+<body>
+<div class="container">
+    <div class="title">Address Form</div>
+    <form (ngSubmit)="onSubmit()" #addressForm="ngForm">
+      <div class="user-details">
+        <div class="input-box" *ngFor="let field of formFields">
+          <span class="details">{{ field.label }}</span>
+          <input
+            type="text"
+            [placeholder]="field.placeholder"
+            required
+            name="{{ field.name }}"
+            [(ngModel)]="formData[field.name]"
+          />
+        </div>
+      </div>
+      <div class="button">
+        <input type="submit" value="Submit" [disabled]="!addressForm.form.valid" />
+      </div>
+    </form>
+  </div>
+  </body
